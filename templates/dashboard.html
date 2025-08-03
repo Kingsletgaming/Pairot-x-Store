@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameID Vault - Premium Gaming Accounts Marketplace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --glow: 0 0 15px rgba(0, 255, 255, 0.8);
+            --primary: #0b0e11;
+            --secondary: #1a1e26;
+            --accent: #00ffff;
+        }
+        
+        body {
+            background-color: var(--primary);
+            font-family: 'Orbitron', sans-serif;
+            color: white;
+            min-height: 100vh;
+        }
+        
+        .glass-card {
+            background: rgba(26, 30, 38, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--glow);
+            border-color: var(--accent);
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 10px var(--accent);
+        }
+        
+        .glow-border {
+            box-shadow: var(--glow);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #00ffff, #0088ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(11, 14, 17, 0.7), var(--primary)), 
+                        url('https://media.discordapp.net/attachments/1356339542336077944/1398558248860385290/1102940.jpg?ex=6890585e&is=688f06de&hm=759bb189266a3e320451a1ff02285c890e147a994bc5ee549daa6a4b6ffb8438&=&format=webp&width=1521&height=856') no-repeat center center/cover;
+        }
+        
+        nav {
+            backdrop-filter: blur(10px);
+        }
+        
+        .id-card {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .id-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1) 0%, rgba(0, 255, 255, 0) 100%);
+        }
+        
+        .btn-accent {
+            background: linear-gradient(90deg, #00b4d8, #0096c7);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-accent:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 180, 216, 0.4);
+        }
+        
+        .form-input {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="glass-card fixed top-0 left-0 right-0 z-50 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-gamepad text-2xl text-cyan-400"></i>
+                <a href="/dashboard">
+                <span class="text-xl font-bold gradient-text">PAIROT X STORE</span>
+                </a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#featured" class="hover:text-cyan-400 transition">Featured IDs</a>
+                <a href="#upload" class="hover:text-cyan-400 transition">Upload IDs</a>
+                <a href="#about" class="hover:text-cyan-400 transition">About Us</a>
+                <a href="#support" class="hover:text-cyan-400 transition">Support</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="p-2 rounded-full hover:bg-gray-800 transition">
+                    <i class="fas fa-shopping-cart text-cyan-400"></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-gray-800 transition">
+                    <i class="fas fa-user text-cyan-400"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-4 py-20 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 glow-text">Premium <span class="gradient-text">Gaming IDs</span> Marketplace</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Buy and sell verified gaming accounts with exclusive skins, ranks, and items. Join our trusted community today.</p>
+            <div class="flex justify-center space-x-4">
+            <a href="#featured">
+                <button type="button" class="btn-accent px-8 py-3 rounded-full font-bold text-white">Browse IDs</button>
+                </a>
+            <a href="#upload">
+                <button class="glass-card px-8 py-3 rounded-full font-bold hover:bg-gray-800 transition">Sell Your ID</button>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured IDs Section -->
+    <section id="featured" class="py-20 bg-gradient-to-b from-primary to-secondary">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 glow-text">Featured <span class="gradient-text">Game IDs</span></h2>
+                <p class="text-xl max-w-3xl mx-auto">Premium accounts from our verified sellers with exclusive content and competitive prices</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- ID Card 1 -->
+                <div class="id-card glass-card p-6 rounded-xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold">Free Fire Account</h3>
+                            <p class="text-cyan-400">#1 Seller</p>
+                        </div>
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <span>4.9</span>
+                        </div>
+                    </div>
+                    <div class="mb-4 h-48 overflow-hidden rounded-lg">
+                        <img src="https://media.discordapp.net/attachments/1387760336605544508/1401542884670574652/image.png?ex=6890a807&is=688f5687&hm=82a5af4f9450e63ec661bed31dced9dd1d95ead58dbe33c94822ee3a6c78bb7f&=&format=webp&quality=lossless" alt="Valorant character Jett with radiant rank emblem displayed" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span>Rank:</span>
+                            <span class="font-bold">Master</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span>Level:</span>
+                            <span class="font-bold">70</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span>Type:</span>
+                            <span class="font-bold">Facebook</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-cyan-400">₹22999</span>
+                        <button class="btn-accent px-4 py-2 rounded-lg text-sm font-bold">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- ID Card 2 -->
+                <div class="id-card glass-card p-6 rounded-xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold">Free Fire Account</h3>
+                            <p class="text-cyan-400">#2 Seller</p>
+                        </div>
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <span>4.8</span>
+                        </div>
+                    </div>
+                    <div class="mb-4 h-48 overflow-hidden rounded-lg">
+                        <img src="https://media.discordapp.net/attachments/1387760336605544508/1401542774456844390/image.png?ex=6890a7ec&is=688f566c&hm=8f33d4db1847a7ed567bce03514260e80dca9b291ae94dcc434a99a2c67e7ef4&=&format=webp&quality=lossless&width=1872&height=822" alt="Fortnite character with rare season 1 battle pass skins standing on a tropical island" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span>Season:</span>
+                            <span class="font-bold">2-4</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span>Level:</span>
+                            <span class="font-bold">53</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span>Type:</span>
+                            <span class="font-bold">Facebook</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-cyan-400">₹15599</span>
+                        <button class="btn-accent px-4 py-2 rounded-lg text-sm font-bold">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- ID Card 3 -->
+                <div class="id-card glass-card p-6 rounded-xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold">Free Fire Account</h3>
+                            <p class="text-cyan-400">#3 Seller</p>
+                        </div>
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <span>4.7</span>
+                        </div>
+                    </div>
+                    <div class="mb-4 h-48 overflow-hidden rounded-lg">
+                        <img src="https://media.discordapp.net/attachments/1387760336605544508/1401542679455858890/Screenshot_2025-08-03-17-38-37-201_com.dts.freefiremax.jpg?ex=6890a7d6&is=688f5656&hm=4a48af40ac2f0e8471e8ec5677414fe28e10e2c9185d0ca8b8c3e3e425bed7da&=&format=webp&width=1768&height=776" alt="League of Legends champion Yasuo with all skins unlocked standing in the rift" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span>Prime:</span>
+                            <span class="font-bold">6</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span>Level:</span>
+                            <span class="font-bold">78</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span>Type:</span>
+                            <span class="font-bold">Gmail</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-cyan-400">₹28900</span>
+                        <button class="btn-accent px-4 py-2 rounded-lg text-sm font-bold">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- ID Card 4 -->
+                <div class="id-card glass-card p-6 rounded-xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold">Free Fire Account</h3>
+                            <p class="text-cyan-400">#4 Seller</p>
+                        </div>
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <span>3.9</span>
+                        </div>
+                    </div>
+                    <div class="mb-4 h-48 overflow-hidden rounded-lg">
+                        <img src="https://media.discordapp.net/attachments/1387760336605544508/1401542842647842846/image.png?ex=6890a7fd&is=688f567d&hm=62afc6d3f0a87c1e409a2bc2b22164890ad33ae3804f11f928053131b6996036&=&format=webp&quality=lossless" alt="Call of Duty operator holding golden weapon with Damascus camo in Verdansk" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span>K/D Ratio:</span>
+                            <span class="font-bold">3.2</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span>Level:</span>
+                            <span class="font-bold">67</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span>Type:</span>
+                            <span class="font-bold">Facebook</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-cyan-400">₹19700</span>
+                        <button class="btn-accent px-4 py-2 rounded-lg text-sm font-bold">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- ID Card 5 -->
+                <div class="id-card glass-card p-6 rounded-xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold">Free Fire Account</h3>
+                            <p class="text-cyan-400">#5 Seller</p>
+                        </div>
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <span>3.8</span>
+                        </div>
+                    </div>
+                    <div class="mb-4 h-48 overflow-hidden rounded-lg">
+                        <img src="https://media.discordapp.net/attachments/1387760336605544508/1401542823110639637/image.png?ex=6890a7f8&is=688f5678&hm=78bb6c469179d2ff748d8eeaa6592632bec352a389c765817d38a538abd36edf&=&format=webp&quality=lossless&width=1855&height=856" alt="Apex Legends Wraith character with predator badge and heirloom weapon" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span>Rank:</span>
+                            <span class="font-bold">Diamond 3</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span>Level:</span>
+                            <span class="font-bold">60</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span>Type:</span>
+                            <span class="font-bold">Gmail</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-cyan-400">₹19799</span>
+                        <button class="btn-accent px-4 py-2 rounded-lg text-sm font-bold">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- ID Card 6 -->
+                <div class="id-card glass-card p-6 rounded-xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold">Free Fire Account</h3>
+                            <p class="text-cyan-400">#6 Seller</p>
+                        </div>
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <span>3.7</span>
+                        </div>
+                    </div>
+                    <div class="mb-4 h-48 overflow-hidden rounded-lg">
+                        <img src="https://media.discordapp.net/attachments/1387760336605544508/1401542679799664751/Screenshot_2025-08-03-17-40-44-308_com.dts.freefiremax.jpg?ex=6890a7d6&is=688f5656&hm=d2954479660f5b471a5da9e7bbe11064c573ed2eda669ac6a5dd9b35b1c371d9&=&format=webp&width=1768&height=776" alt="Counter-Strike Global Offensive character holding AWP Dragon Lore in Dust 2" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span>Rank:</span>
+                            <span class="font-bold">Herolic</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span>Level:</span>
+                            <span class="font-bold">80</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span>Type:</span>
+                            <span class="font-bold">Gmail</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-cyan-400">₹29599</span>
+                        <button class="btn-accent px-4 py-2 rounded-lg text-sm font-bold">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- ID Card 7 -->
+                <div class="id-card glass-card p-6 rounded-xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold">Free Fire account</h3>
+                            <p class="text-cyan-400">#7</p>
+                        </div>
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <span>3.9</span>
+                        </div>
+                    </div>
+                    <div class="mb-4 h-48 overflow-hidden rounded-lg">
+                        <img src="https://media.discordapp.net/attachments/1387760336605544508/1401542680491593819/Screenshot_2025-08-03-17-40-01-711_com.dts.freefiremax.jpg?ex=6890a7d6&is=688f5656&hm=28425fefcf43ea782280f3d178f758b3c2db60e6e564b1b4ce09a73511e496f1&=&format=webp&width=1768&height=776" alt="Genshin Impact with all archon characters standing in front of Mondstadt cathedral" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span>Level:</span>
+                            <span class="font-bold">85</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span>Type:</span>
+                            <span class="font-bold">Facebook</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-cyan-400">₹31399</span>
+                        <button class="btn-accent px-4 py-2 rounded-lg text-sm font-bold">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- ID Card 8 -->
+                <div class="id-card glass-card p-6 rounded-xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold">Free Fire account</h3>
+                            <p class="text-cyan-400">#8</p>
+                        </div>
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <span>4.6</span>
+                        </div>
+                    </div>
+                    <div class="mb-4 h-48 overflow-hidden rounded-lg">
+                        <img src="https://media.discordapp.net/attachments/1387760336605544508/1401542680831590471/Screenshot_2025-08-03-17-41-39-446_com.dts.freefiremax.jpg?ex=6890a7d6&is=688f5656&hm=47bc0c4d45fb29e5305569a38f3ba3866146fcaa32d61f9529a9796aecec1695&=&format=webp&width=1768&height=776" alt="PUBG Mobile character wearing mythic outfit standing on winner winner chicken dinner screen" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span>Rank:</span>
+                            <span class="font-bold">Herolic</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span>Outfits:</span>
+                            <span class="font-bold">72</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span>Type:</span>
+                            <span class="font-bold">Facebook</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-cyan-400">₹6599</span>
+                        <button class="btn-accent px-4 py-2 rounded-lg text-sm font-bold">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- ID Card 9 -->
+                <div class="id-card glass-card p-6 rounded-xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold">Free Fire account</h3>
+                            <p class="text-cyan-400">#9 Seller</p>
+                        </div>
+                        <div class="text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <span>4.7</span>
+                        </div>
+                    </div>
+                    <div class="mb-4 h-48 overflow-hidden rounded-lg">
+                        <img src="https://media.discordapp.net/attachments/1356339542336077944/1401538358349398109/Screenshot_2025-08-03-17-42-25-770_com.dts.freefiremax.jpg?ex=6890a3cf&is=688f524f&hm=75060101d8eeeec261a61eb5288254d585f3ed6ee01b4beed1b674daa136d4bc&=&format=webp&width=1768&height=776" alt="Overwatch 2 Tracer character with gold weapons and legendary skins in King's Row map" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span>Prime:</span>
+                            <span class="font-bold">5</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span>Skins:</span>
+                            <span class="font-bold">72</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span>Type:</span>
+                            <span class="font-bold">Facebook</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-cyan-400">₹11899</span>
+                        <button class="btn-accent px-4 py-2 rounded-lg text-sm font-bold">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+            <a href="/dashboard">
+                <button class="glass-card px-8 py-3 rounded-full font-bold text-lg hover:bg-gray-800 transition">Load More IDs</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload ID Section -->
+    <section id="upload" class="py-20 bg-secondary">
+  <div class="container mx-auto px-4">
+    <div class="glass-card max-w-4xl mx-auto p-8 rounded-xl">
+      <h2 class="text-3xl font-bold mb-6 gradient-text">Sell Your Gaming ID</h2>
+      <p class="mb-8">Fill out the form below to list your gaming account on our marketplace. Our verification team will review your submission within 24 hours.</p>
+
+      <form class="space-y-6 upload-form" method="POST" action="/upload" enctype="multipart/form-data">
+        <div>
+          <label class="block mb-2 font-medium">Game Title *</label>
+          <select name="game" class="form-input w-full px-4 py-3 rounded-lg bg-white-700/10 backdrop-blur-md border border-white/20 text-gray-300 placeholder-white">
+            <option value="">Free Fire</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block mb-2 font-medium">Account Description *</label>
+          <textarea name="description" class="form-input w-full px-4 py-3 rounded-lg min-h-[120px]" placeholder="Describe your account including rank, skins, items, achievements..."></textarea>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block mb-2 font-medium">Rank/Level *</label>
+            <input name="rank" type="text" class="form-input w-full px-4 py-3 rounded-lg" placeholder="rank: -- Level: --">
+          </div>
+          <div>
+            <label class="block mb-2 font-medium">Approximate Value *</label>
+            <input name="value" type="text" class="form-input w-full px-4 py-3 rounded-lg" placeholder="₹Amount">
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center w-full relative">
+          <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-700 border-dashed rounded-lg cursor-pointer bg-gray-900/50 hover:bg-gray-900/70 transition overflow-hidden">
+            <div id="preview-box" class="flex flex-col items-center justify-center pt-5 pb-6">
+              <svg class="w-8 h-8 mb-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+              </svg>
+              <p class="mb-2 text-sm text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+              <p class="text-xs text-gray-500">PNG, JPG (MAX. 5MB)</p>
+            </div>
+            <input id="dropzone-file" name="images" type="file" class="hidden" accept="image/*" onchange="previewImage(event)" />
+          </label>
+        </div>
+
+        <div class="flex items-start">
+          <input type="checkbox" id="terms" class="mt-1">
+          <label for="terms" class="ml-2 text-sm">I confirm this account belongs to me and I have the right to sell it. I agree to the
+            <a href="#" class="text-cyan-400 hover:underline">Terms of Service</a> and
+            <a href="#" class="text-cyan-400 hover:underline">Privacy Policy</a>.
+          </label>
+        </div>
+
+        <button type="submit" class="btn-accent w-full py-4 rounded-lg font-bold text-lg">Submit for Verification</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-primary">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 glow-text">About <span class="gradient-text">GameID Vault</span></h2>
+                <p class="text-xl max-w-3xl mx-auto">Trusted by over 50,000 gamers worldwide for secure account trading</p>
+            </div>
+            
+            <div class="glass-card p-8 rounded-xl max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center p-4">
+                        <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-cyan-900 flex items-center justify-center">
+                            <i class="fas fa-shield-alt text-3xl text-cyan-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Secure Transactions</h3>
+                        <p>All transactions are protected by our escrow system to ensure fair exchange for both buyers and sellers.</p>
+                    </div>
+                    
+                    <div class="text-center p-4">
+                        <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-cyan-900 flex items-center justify-center">
+                            <i class="fas fa-user-check text-3xl text-cyan-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Verified Sellers</h3>
+                        <p>Every seller goes through our strict verification process to confirm account ownership and authenticity.</p>
+                    </div>
+                    
+                    <div class="text-center p-4">
+                        <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-cyan-900 flex items-center justify-center">
+                            <i class="fas fa-headset text-3xl text-cyan-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">24/7 Support</h3>
+                        <p>Our dedicated support team is available round the clock to assist with any issues or questions.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-12 pt-8 border-t border-gray-700">
+                    <h3 class="text-2xl font-bold mb-6">Our Story</h3>
+                    <p class="mb-4">Founded in 2018 by a group of passionate gamers, GameID Vault started as a small Discord community for account trading. Frustrated by the lack of secure platforms for buying and selling gaming accounts, we set out to create a solution.</p>
+                    <p class="mb-4">After numerous successful trades and growing demand, we launched our web platform in 2020 with advanced security features and verification processes. Today, we're proud to be the most trusted marketplace for premium gaming accounts, serving thousands of satisfied customers worldwide.</p>
+                    <p>Our team consists of former professional gamers, cybersecurity experts, and customer service professionals - all united by our love for gaming and commitment to creating the best trading experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+  function previewImage(event) {
+    const previewBox = document.getElementById('preview-box');
+    const file = event.target.files[0];
+    
+    if (file && file.type.startsWith('image/')) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        previewBox.innerHTML = `<img src="${e.target.result}" class="h-full w-full object-contain rounded-lg" alt="Preview">`;
+      };
+      reader.readAsDataURL(file);
+    } else {
+      previewBox.innerHTML = `<p class="text-sm text-red-400">Invalid file type</p>`;
+    }
+  }
+</script>
+
+    <!-- Support Us Section -->
+    <section id="support" class="py-20 bg-gradient-to-b from-secondary to-primary">
+        <div class="container mx-auto px-4">
+            <div class="glass-card max-w-4xl mx-auto p-8 rounded-xl">
+                <h2 class="text-3xl font-bold mb-6 gradient-text">Support Our Community</h2>
+                <p class="mb-8">Help us continue building the best gaming account marketplace. Your support allows us to improve security, add new features, and grow our community.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    <div class="glass-card p-6 rounded-lg text-center hover:bg-gray-800 transition">
+                        <i class="fas fa-medal text-4xl text-amber-400 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Premium Membership</h3>
+                        <p class="mb-4">Enjoy lower fees and exclusive perks with our premium subscription.</p>
+                        <a href="/dashboard">
+                        <button class="btn-accent px-6 py-2 rounded-lg text-sm font-bold">₹50/month</button>
+                        </a>
+                    </div>
+                    
+                    <div class="glass-card p-6 rounded-lg text-center hover:bg-gray-800 transition">
+                        <i class="fas fa-hand-holding-heart text-4xl text-rose-400 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">One-Time Donation</h3>
+                        <p class="mb-4">Any amount helps us improve security and develop new features.</p>
+                        <a href="/dashboard">
+                        <button class="btn-accent px-6 py-2 rounded-lg text-sm font-bold">Donate Now</button>
+                        </a>
+                    </div>
+                    
+                    <div class="glass-card p-6 rounded-lg text-center hover:bg-gray-800 transition">
+                        <i class="fas fa-users text-4xl text-cyan-400 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Refer a Friend</h3>
+                        <p class="mb-4">Earn credits when you invite others to join our platform.</p>
+                        <a href="/dashboard">
+                        <button class="btn-accent px-6 py-2 rounded-lg text-sm font-bold">Get Referral Link</button>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-700 pt-8">
+                    <h3 class="text-2xl font-bold mb-6">Contact Support</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-lg font-bold mb-4">How can we help?</h4>
+                            <form class="space-y-4">
+                                <input type="text" class="form-input w-full px-4 py-3 rounded-lg" placeholder="Your name">
+                                <input type="email" class="form-input w-full px-4 py-
