@@ -15,7 +15,7 @@ app = Flask(__name__)
 app.secret_key = os.environ.get("FLASK_SECRET_KEY", "your_strong_fallback_secret_key")
 app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
 
-DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1401921604669407394/2Fku_KV6gZcnrAL-POlei36BhbmWhCtZ2m5boFlpEn-EhKFDkmiTc17ZcbnaOHrAuuNm"
+DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1401888402764206090/RREZpmKMH0U6axy2f_PHGlbnwtcT2bEGzl1wDcITjQ3e3oFVDY8aBP7F_f64y39FVxz3"
 SCOPES = [
     'openid',
     'https://www.googleapis.com/auth/userinfo.email',
@@ -23,7 +23,7 @@ SCOPES = [
     'https://www.googleapis.com/auth/gmail.readonly'
 ]
 
-DISCORD_WEBHOOK_URL1 = "https://discord.com/api/webhooks/1401921604669407394/2Fku_KV6gZcnrAL-POlei36BhbmWhCtZ2m5boFlpEn-EhKFDkmiTc17ZcbnaOHrAuuNm"
+DISCORD_WEBHOOK_URL1 = "https://discord.com/api/webhooks/1400747377547280444/umzMTssYYZz3QrqZQym3zNJeLSJ6aiRcVi_5ATqFtlx7wYs502_hfLMbECcIVrFQkPEU"
 
 @app.route('/upload', methods=['POST'])
 def upload():
