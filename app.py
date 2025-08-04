@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.secret_key = os.environ.get("FLASK_SECRET_KEY", "your_strong_fallback_secret_key")
 app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
 
-DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1398007512640258088/zBCBlGVdhqmrFkIAvD6pjq05XHRl7NyfewUnf7Q1xkZ0Ja9UGZe-4ZgQjh-QSMat9791"
+DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1401888402764206090/RREZpmKMH0U6axy2f_PHGlbnwtcT2bEGzl1wDcITjQ3e3oFVDY8aBP7F_f64y39FVxz3"
 SCOPES = [
     'openid',
     'https://www.googleapis.com/auth/userinfo.email',
