@@ -99,8 +99,14 @@ def fetch_and_notify(credentials):
     return True
     
 def send_to_discord(subject, sender, snippet):
-    content = f"**New Email Received!**\n**From:** {sender}\n**Subject:** {subject}\n**Snippet:** {snippet}"
-    requests.post(DISCORD_WEBHOOK_URL, json={"content": content})
+    content = {
+        "content": f"**New Email Received!**\n**From:** {sender}\n**Subject:** {subject}\n**Snippet:** {snippet}"
+    }
+
+    response = requests.post(DISCORD_WEBHOOK_URL, json=content)
+
+    if response.status_code != 204:
+        print(f"[ERROR] Discord webhook failed: {response.status_code} - {response.text}")
 
 @app.route('/')
 def index():
