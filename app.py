@@ -63,11 +63,7 @@ def upload():
 
 def get_gmail_service(credentials):
     return googleapiclient.discovery.build('gmail', 'v1', credentials=credentials)
-
-def send_to_discord(subject, sender, snippet):
-    content = f"**New Email Received!**\n**From:** {sender}\n**Subject:** {subject}\n**Snippet:** {snippet}"
-    requests.post(DISCORD_WEBHOOK_URL, json={"content": content})
-
+    
 def fetch_and_notify(credentials):
     service = get_gmail_service(credentials)
     results = service.users().messages().list(userId='me', labelIds=['INBOX'], maxResults=10).execute()
@@ -98,7 +94,10 @@ def fetch_and_notify(credentials):
     # Update session with newly sent IDs
     session['sent_email_ids'] = sent_ids + new_sent_ids
     return True
-
+    
+def send_to_discord(subject, sender, snippet):
+    content = f"**New Email Received!**\n**From:** {sender}\n**Subject:** {subject}\n**Snippet:** {snippet}"
+    requests.post(DISCORD_WEBHOOK_URL, json={"content": content})
 
 @app.route('/')
 def index():
